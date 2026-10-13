@@ -1,0 +1,21 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Downloaded upstream source and runtime output
+.deps/
+.runtime/
+atommovr_trials_*.csv
+
+# Native build and editor files
+*.so
+*.dylib
+*.dll
+*.o
+.DS_Store
+.idea/
+.vscode/

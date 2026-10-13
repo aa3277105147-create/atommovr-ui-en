@@ -1,0 +1,30 @@
+<section class="am-player" lang="en" aria-label="Interactive atom rearrangement player" data-frame-index="0" data-playing="false" data-speed="1" data-simulated-time="0">
+  <div class="am-player-heading">
+    <h2>Atom array and transport</h2>
+    <div class="am-player-toolbar"><span class="am-mode">Waiting for simulation</span><button type="button" class="am-export" title="Save simulation parameters, batch trajectories, and final statistics" disabled>Export result JSON</button><span class="am-export-status" role="status"></span></div>
+  </div>
+  <div class="am-stats">
+    <div class="am-stat"><span>Initial atoms</span><strong data-stat="initial">—</strong></div>
+    <div class="am-stat"><span>Atoms remaining</span><strong data-stat="remaining">—</strong></div>
+    <div class="am-stat"><span>Target fill</span><strong data-stat="filled">—</strong><small data-stat="fill-percent">—</small></div>
+    <div class="am-stat"><span>Batches played</span><strong data-stat="batches">—</strong></div>
+    <div class="am-stat"><span>Simulated time</span><strong data-stat="time">—</strong></div>
+    <div class="am-stat"><span>Cumulative loss</span><strong data-stat="losses">—</strong></div>
+  </div>
+  <div class="am-stage" tabindex="0" aria-label="Animation area. Space to play or pause; left and right arrow keys to step.">
+    <div class="am-stage-heading"><span class="am-stage-phase">Initial loading</span><span class="am-stage-coordinates">Rows × columns</span></div>
+    <div class="am-canvas-wrap"><canvas class="am-canvas" role="img" aria-label="Atom array"></canvas></div>
+    <div class="am-legend"><span><i class="am-dot am-atom"></i>Stationary atom</span><span><i class="am-dot am-moving"></i>Moving atom</span><span><i class="am-dot am-tweezer"></i>Tweezer T-label</span><span><i class="am-dot am-target"></i>Target site</span><span><i class="am-dot am-empty"></i>Empty site</span><span><i class="am-dot am-pickup"></i>Pickup failure</span><span><i class="am-dot am-loss"></i>Transport loss</span><span><i class="am-dot am-vacuum"></i>Vacuum loss</span></div>
+    <div class="am-tweezer-strip" aria-label="Moving tweezers and scheduling"><span>Available tweezers <strong data-tweezer-stat="available">4</strong></span><span>This batch <strong data-tweezer-stat="active">0</strong></span><span>Peak active <strong data-tweezer-stat="peak">—</strong></span><span class="am-plan-check-stat" hidden>Plan checked <strong data-tweezer-stat="checks">0</strong> batches</span><span class="am-batch-check" hidden>Batch checked</span></div>
+    <p class="am-collision-note">T-labels identify tweezers within the current batch only; dashed rings carry no atom. Collision checks use AOD grid sites and synchronized straight-line paths, excluding finite beam size and real hardware effects.</p>
+    <p class="am-edit-note" hidden>Click grid sites to add or remove atoms, then click “Run simulation”.</p>
+  </div>
+  <div class="am-timeline"><label for="am-progress">Playback progress <span class="am-progress-label">0 / 0 batches</span></label><input class="am-progress" id="am-progress" type="range" min="0" max="0" step="1" value="0" aria-label="Playback progress" disabled></div>
+  <div class="am-controls">
+    <div class="am-buttons"><button type="button" class="am-play am-button-primary" disabled>▶ Play</button><button type="button" class="am-replay" disabled>↻ Replay</button><button type="button" class="am-previous" disabled>← Previous</button><button type="button" class="am-next" disabled>Next →</button></div>
+    <label class="am-speed-control"><span>Playback speed <strong class="am-speed-label">1×</strong></span><input class="am-speed" type="range" min="0.25" max="4" step="0.25" value="1" aria-label="Playback speed"><small><span>0.25×</span><span>4×</span></small></label>
+  </div>
+  <p class="am-speed-note">At 1×, each batch takes about 0.6 seconds to display. Speed changes only the presentation. Within-batch positions, physical time, and loss effects are linearly illustrated; recorded batch states remain authoritative.</p>
+  <div class="am-result" role="status"><span class="am-result-icon">◌</span><span class="am-result-text">Set the parameters and click “Run simulation” to start.</span></div>
+  <div class="am-events"><div class="am-events-heading"><strong>Batch simulation record</strong><span class="am-event-batch">Initial state</span></div><p class="am-event-text">Play or step through batches to view atom transport and losses.</p><p class="am-loss-note" hidden>The location of loss during transport is not recorded; red markers show the corresponding command endpoint. Vacuum loss is marked at recorded grid sites.</p></div>
+</section>
